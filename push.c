@@ -69,9 +69,11 @@ void _push(stack_t **stack, unsigned int line_number)
 		i++;
 	for (; bus.args[i]; i++)
 	{
-		if (bus.args[i] < 'a' || bus.args[i] > 'z')
+		if (bus.args[i] < 48 || bus.args[i] > 57)
 		{
-			fprintf(stderr, "Not a number");
+			fprintf(stderr, "Not a number\n");
+			free(bus.line);
+			fclose(bus.file);
 			exit(EXIT_FAILURE);
 		}
 	}
