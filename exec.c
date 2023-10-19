@@ -3,6 +3,9 @@
 /**
  * execute - execute a monty command
  * @line: the command
+ * @file: the file
+ * @stack: the stack
+ * @line_number: the line number
  * Return: 0, 1 if error
  */
 int execute(char *line, FILE *file, stack_t **stack, unsigned int line_number)
